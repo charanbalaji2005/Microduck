@@ -1,0 +1,16 @@
+# Never bake secrets or local state into the image.
+.env
+.env.*
+!.env.example
+.venv/
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+frontend/node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
+frontend/public/scenery/
+tests/
+docs/
+scripts/
+sim/

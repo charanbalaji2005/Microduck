@@ -1,0 +1,34 @@
+# Render blueprint: Microduck X as a free hosted demo, in MOCK mode.
+#
+# What runs: the dashboard (hangar, chat, Groq brain, the duck's synthesised voice) in front of the
+# MOCK robot — not MuJoCo, not robotd. The 3D view shows the mock stand-in and says so. The real
+# duck needs MuJoCo + robotd + ONNX policies at 50 Hz, which the free instance (0.1 CPU) cannot
+# keep in real time; see microduck-x/README.md.
+#
+# Free-plan facts: the service sleeps after ~15 minutes without traffic and takes a while to wake;
+# its disk is ephemeral (the duck's memory and chat history reset on each restart or deploy).
+#
+# After the first deploy: set GROQ_API_KEY in the dashboard (it is never in this file), then open
+#   https://<service>.onrender.com/?token=<MDX_TOKEN from the Environment tab>
+services:
+  - type: web
+    name: microduck-x
+    runtime: docker
+    plan: free
+    dockerfilePath: ./microduck-x/Dockerfile
+    dockerContext: ./microduck-x
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false            # entered in the Render dashboard; read only by the server
+      - key: MDX_TOKEN
+        generateValue: true    # required for a public bind; the page passes it as ?token=
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: GROQ_TIMEOUT_S
+        value: "30"
+      - key: GROQ_RATE_PER_MIN
+        value: "10"            # every visitor shares one key; keep the bill bounded
+      - key: MDX_MOCK
+        value: "1"             # the Dockerfile also binds MDX_HOST=0.0.0.0 on Render's $PORT

@@ -1,0 +1,10 @@
+{
+  "name": "waypoint_tour",
+  "title": "Waypoint tour and return",
+  "description": "Visit goal_1, goal_2, goal_3, then return to the start pad.",
+  "environment": "arena", "layout": "open", "keyframe": "SIT", "settle_s": 12,
+  "steps": [{"action": "waypoints", "targets": ["goal_1", "goal_2", "goal_3"], "speed": 0.2},
+            {"action": "goto", "target": "start", "speed": 0.2}],
+  "success": {"goal": "start", "goal_tolerance_m": 0.3, "upright": true, "max_duration_s": 240},
+  "trials": 1
+}

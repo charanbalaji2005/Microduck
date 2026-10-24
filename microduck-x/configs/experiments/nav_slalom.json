@@ -1,0 +1,9 @@
+{
+  "name": "nav_slalom",
+  "title": "Slalom to goal 1",
+  "description": "Arena with three cones between start and goal_1; the planner must route around them and the robot must not touch any.",
+  "environment": "arena", "layout": "slalom", "keyframe": "SIT", "settle_s": 12,
+  "steps": [{"action": "goto", "target": "goal_1", "speed": 0.15}],
+  "success": {"goal": "goal_1", "goal_tolerance_m": 0.25, "upright": true, "max_obstacle_contacts": 0, "max_duration_s": 120},
+  "trials": 1
+}

@@ -1,0 +1,9 @@
+{
+  "name": "turn_in_place_90",
+  "title": "Turn in place 90°",
+  "description": "Closed-loop 90° left turn (yaw measured by the simulator), then a check that the robot did not wander.",
+  "environment": "arena", "layout": "open", "keyframe": "SIT", "settle_s": 12,
+  "steps": [{"action": "turn", "vyaw": 0.7, "angle_deg": 90}],
+  "success": {"min_abs_yaw_deg": 75, "max_abs_yaw_deg": 110, "max_lateral_m": 0.25, "max_forward_m": 0.25, "upright": true},
+  "trials": 1
+}

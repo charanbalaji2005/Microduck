@@ -1,0 +1,9 @@
+{
+  "name": "walk_forward_1m",
+  "title": "Walk forward ~1 m",
+  "description": "Open-loop forward walk at 0.2 m/s for 5 s in the open arena. Passes on measured ground-truth displacement, not on the command being accepted.",
+  "environment": "arena", "layout": "open", "keyframe": "SIT", "settle_s": 12,
+  "steps": [{"action": "walk", "vx": 0.2, "duration_s": 5.0}],
+  "success": {"min_forward_m": 0.6, "max_lateral_m": 0.3, "upright": true, "max_tilt_deg": 40},
+  "trials": 1
+}

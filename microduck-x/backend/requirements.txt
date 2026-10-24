@@ -1,0 +1,15 @@
+# Microduck X control service. Python 3.12.
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+pydantic>=2.7,<3
+python-multipart>=0.0.9
+numpy>=1.26
+# Open conversation (brain.py): the official Groq SDK. Used only when GROQ_API_KEY is set.
+groq>=0.30,<1
+# Speech, offline. faster-whisper downloads nothing until asked (x-setup.sh --whisper, or Settings).
+faster-whisper>=1.0,<2
+pocketsphinx>=5.0,<6
+# Tests
+pytest>=8
+pytest-asyncio>=0.23
+httpx>=0.27

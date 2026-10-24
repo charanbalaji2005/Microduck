@@ -1,0 +1,9 @@
+{
+  "name": "stand_still_10s",
+  "title": "Stand still for 10 s",
+  "description": "Baseline: enable, stand, hold for 10 s with a zero twist. Drift and tilt should be near zero.",
+  "environment": "arena", "layout": "open", "keyframe": "SIT", "settle_s": 12,
+  "steps": [{"action": "hold", "duration_s": 10.0}],
+  "success": {"max_forward_m": 0.1, "max_lateral_m": 0.1, "max_abs_yaw_deg": 15, "upright": true, "max_tilt_deg": 20},
+  "trials": 1
+}

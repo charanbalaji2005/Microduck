@@ -1,0 +1,9 @@
+{
+  "name": "push_recovery",
+  "title": "Push recovery (3 N, 0.2 s, from the side)",
+  "description": "Stand, receive a 3 N lateral shove on the trunk for 0.2 s, and stay upright. Robustness probe for the standing behaviour of the loaded gait.",
+  "environment": "arena", "layout": "open", "keyframe": "SIT", "settle_s": 12,
+  "steps": [{"action": "push", "direction": "left", "newtons": 3.0, "seconds": 0.2}],
+  "success": {"upright": true, "max_tilt_deg": 45},
+  "trials": 1
+}

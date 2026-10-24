@@ -1,0 +1,10 @@
+# The control service as a hosted demo (Dockerfile, render.yaml): MOCK robot, Groq brain, dashboard.
+# requirements.txt minus offline speech (faster-whisper, pocketsphinx: hundreds of MB, and the hangar's
+# chat microphone uses the browser's own recognition) and the test tools. stt.py reports speech as
+# unavailable when neither engine is importable.
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+pydantic>=2.7,<3
+python-multipart>=0.0.9
+numpy>=1.26
+groq>=0.30,<1

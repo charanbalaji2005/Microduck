@@ -1,0 +1,9 @@
+{
+  "name": "nav_to_goal_2",
+  "title": "Navigate to goal 2",
+  "description": "Plan on the arena's collision geometry and walk to goal_2 (2.0, 1.5) with the heading controller (Microduck X extension over robot.move).",
+  "environment": "arena", "layout": "open", "keyframe": "SIT", "settle_s": 12,
+  "steps": [{"action": "goto", "target": "goal_2", "speed": 0.2}],
+  "success": {"goal": "goal_2", "goal_tolerance_m": 0.25, "upright": true, "max_obstacle_contacts": 0, "max_duration_s": 90},
+  "trials": 1
+}
