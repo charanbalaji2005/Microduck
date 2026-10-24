@@ -40,7 +40,9 @@ microduck-x/scripts/x-stop.sh
 
 Full guide: [`docs/SIMULATION_SETUP.md`](docs/SIMULATION_SETUP.md).
 
-**Hosted demo.** `microduck-x/Dockerfile` and the repository's `render.yaml` run the dashboard,
+**Hosted demo.** [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/charanbalaji2005/Microduck)
+
+`microduck-x/Dockerfile` and the repository's `render.yaml` run the dashboard,
 chat, Groq brain and the duck's voice in front of the **MOCK** robot (not MuJoCo, not the
 Microduck; the page says so) on Render's free plan. Set `GROQ_API_KEY` in Render's dashboard, then
 open `/?token=<MDX_TOKEN>`. The real duck needs the setup above.
